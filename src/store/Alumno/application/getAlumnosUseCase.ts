@@ -8,6 +8,7 @@ export class GetAlumnosUseCase{
     async run():Promise<Alumno[] | null>{
         try {
             const getAll = await this.alumnoRepository.getAlumnos();
+            console.log(getAll)
             return getAll;
             
         } catch (error) {

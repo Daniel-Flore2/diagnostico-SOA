@@ -23,7 +23,6 @@ export async function query(sql: string, params?: any[]) {
         conn.release();
         return result;
     } catch (error) {
-        console.log(error.message);
         signale.error(error);
         return null;
     }
