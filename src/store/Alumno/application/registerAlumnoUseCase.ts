@@ -7,7 +7,7 @@ export class RegisterAlumnoUseCase{
     async run(alumno: Alumno): Promise<Alumno|null> {
         try {
             const newAlumno = {
-                id: alumno.id,
+                matricula: alumno.matricula,
                 nombre: alumno.nombre,
                 materia: alumno.materia,
                 tutor: alumno.tutor,

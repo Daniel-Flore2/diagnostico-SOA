@@ -12,10 +12,10 @@ export class RegisterAlumnoController{
 
     async register(req: Request, res: Response){
         try {
-            const{id,nombre,materia,tutor} = req.body;
+            const{matricula,nombre,materia,tutor} = req.body;
             
             const alumno : Alumno = {
-                id : id,
+                matricula : matricula,
                 nombre: nombre,
                 materia: materia,
                 tutor: tutor,

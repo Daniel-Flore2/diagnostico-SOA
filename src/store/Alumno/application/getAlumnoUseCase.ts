@@ -8,9 +8,9 @@ export class GetalumnoUseCase {
         this.alumnoRepository = alumnoRepository;
     }
 
-    async getalumno(id: number): Promise<Alumno | null> {
+    async getalumno(matricula: number): Promise<Alumno | null> {
         try {
-            return await this.alumnoRepository.getAlumno(id);
+            return await this.alumnoRepository.getAlumno(matricula);
         } catch (error) {
             console.error("Error getting alumno:", error);
             return null;

@@ -4,7 +4,7 @@ import { AlumnoRepository } from "../domain/alumnoRepository";
 
 export class MysqlAlumnoRepository implements AlumnoRepository {
     
-    getAlumno(id: number): Promise<Alumno | null> {
+    getAlumno(matricula: number): Promise<Alumno | null> {
         throw new Error("Method not implemented.");
     }
     async getAlumnos(): Promise<Alumno[] | null> {
@@ -18,7 +18,7 @@ export class MysqlAlumnoRepository implements AlumnoRepository {
 
             const alumnos = rows.map((row: any) => {
                 return new Alumno(
-                    row.id,
+                    row.matricula,
                     row.nombre,
                     row.materia,
                     row.tutor
@@ -34,8 +34,8 @@ export class MysqlAlumnoRepository implements AlumnoRepository {
     }
     async registerAlumno(alumno: Alumno): Promise<Alumno | null> {
         try {
-            const sql = "INSERT INTO alumno (id, nombre, materia, tutor) VALUES (?, ?, ?, ?)";
-            await query(sql, [alumno.id, alumno.nombre, alumno.materia, alumno.tutor]);
+            const sql = "INSERT INTO alumno (matricula, nombre, materia, tutor) VALUES (?, ?, ?, ?)";
+            await query(sql, [alumno.matricula, alumno.nombre, alumno.materia, alumno.tutor]);
 
             return alumno;
 
