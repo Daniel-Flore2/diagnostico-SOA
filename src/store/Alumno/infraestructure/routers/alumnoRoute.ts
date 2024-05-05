@@ -9,7 +9,7 @@ router.get('/alumnos', async (req, res) => {
 });
 
 // Ruta para registrar un nuevo alumno
-router.post('/alumnos', async (req, res) => {
+router.post('/alumno', async (req, res) => {
     await registerAlumnoController.register(req, res);
 });
 

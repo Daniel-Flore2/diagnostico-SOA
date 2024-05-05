@@ -1,7 +1,7 @@
 import { Materia } from "../domain/materia";
 import { MateriaRepository } from "../domain/materiaRepository";
 
-export class getMateriaUseCase {
+export class GetMateriasUseCase {
   constructor(readonly materiaRepository: MateriaRepository) {}
 
   async run(): Promise<Materia[] | null> {
